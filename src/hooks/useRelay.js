@@ -1,12 +1,7 @@
 import { useEffect, useState, useCallback, useRef } from 'react';
 import { io } from 'socket.io-client';
 
-// Detectar si estamos en producción (coderic.org)
-const isProduction = typeof window !== 'undefined' && 
-  (window.location.hostname === 'coderic.org' || window.location.hostname === 'www.coderic.org');
-
-const RELAY_URL = import.meta.env.VITE_RELAY_URL || 
-  (isProduction ? 'wss://demo.relay.coderic.net' : 'http://localhost:5000');
+const RELAY_URL = import.meta.env.VITE_RELAY_URL || 'http://localhost:5000';
 
 export function useRelay(userId) {
   const [connected, setConnected] = useState(false);

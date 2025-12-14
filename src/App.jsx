@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo, useRef } from 'react';
-import { useRelay } from './hooks/useRelay';
+import { useRelay } from './hooks/usePasarela';
 import './App.css';
 
 const SESSION_ID = localStorage.getItem('subastaSession') || (() => {
